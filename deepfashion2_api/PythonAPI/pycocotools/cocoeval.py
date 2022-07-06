@@ -241,6 +241,7 @@ class COCOeval:
        0.0297, 0.0173, 0.0616, 0.0659, 0.0712, 0.0707, 0.0685, 0.0339,
        0.0685, 0.0707, 0.0712, 0.0659, 0.0616, 0.0173])
 
+        sigmas=sigmas[0:25]
         vars = (sigmas * 2)**2
         k = len(sigmas)
         # compute oks between each detection and ground truth object
