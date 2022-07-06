@@ -248,6 +248,7 @@ class COCOeval:
         for j, gt in enumerate(gts):
             # create bounds for ignore regions(double the gt bbox)
             g = np.array(gt['keypoints'])
+
             xg = g[0::3]; yg = g[1::3]; vg = g[2::3]
             k1 = np.count_nonzero(vg > 0)
             bb = gt['bbox']
@@ -258,6 +259,8 @@ class COCOeval:
                 xd = d[0::3]; yd = d[1::3]
                 if k1>0:
                     # measure the per-keypoint distance if keypoints visible
+                    print(xd.shape)
+                    print(xg.shape)
                     dx = xd - xg
                     dy = yd - yg
                 else:
