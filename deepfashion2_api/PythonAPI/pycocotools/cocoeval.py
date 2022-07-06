@@ -250,9 +250,10 @@ class COCOeval:
             g = np.array(gt['keypoints'])
 
             xg = g[0::3]; yg = g[1::3]; vg = g[2::3]
-            print(xg.shape)
-            print(yg.shape)
-            print(vg.shape)
+            #print(xg.shape)#294
+            #print(yg.shape)#294
+            #print(vg.shape)#294
+            xg, yg, vg = xg[0:25], yg[0:25], vg[0:25]
             k1 = np.count_nonzero(vg > 0)
             bb = gt['bbox']
             x0 = bb[0] - bb[2]; x1 = bb[0] + bb[2] * 2
